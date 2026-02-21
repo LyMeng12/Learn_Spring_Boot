@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: banking-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/banking_api
+    username: bank_api
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format_sql: true
+  show-sql: on
