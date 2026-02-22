@@ -19,6 +19,7 @@ public class TestController {
     @Autowired
     private TodoService todoService;
 
+
     @PostMapping("post/user")
     public ResponseEntity<Object> createtodouser(@RequestBody TodoRequest todoRequest){
         log.info("Create User with Request: {}", todoRequest);
@@ -40,7 +41,7 @@ public class TestController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("get/user/{id}")
+    @GetMapping("get/user/{ids}")
     public ResponseEntity<TodoResponse> getById(@PathVariable String id){
         log.info("Get User with Request: {}", id);
         TodoResponse todoResponse = todoService.getById(Long.parseLong(id));
@@ -57,6 +58,7 @@ public class TestController {
         return ResponseEntity.ok(todoResponse);
 
     }
+
 
 
 

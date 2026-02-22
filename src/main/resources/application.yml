@@ -3,18 +3,19 @@ server:
 
 spring:
   application:
-    name: banking-service
+    name: bank_system
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/banking_api
-    username: bank_api
-    password: 1234
+    url: jdbc:postgresql://localhost:5432/bank_system
+    password: 12345
+    username: bank
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
-  properties:
-    hibernate:
-      dialect: org.hibernate.dialect.PostgreSQLDialect
-      format_sql: true
-  show-sql: on
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true

@@ -1,40 +1,37 @@
 package com.bank.banking.api.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Date;
 
-@Getter
-@Setter
-@ToString
-@Entity(name="ToDoUser")
-@Table(name="todouser")
+@Data
+@Entity
+@Table(name = "todo_user")
 public class TodoUser {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name = "username", nullable = false)
+    @Column(nullable = false)
     private String username;
-    @Column(name = "password", nullable = false)
+    private String description;
+
     private String password;
-    @Column (name="money", nullable = false)
+
     private Double money;
 
     private Boolean completed;
 
-    @Column(name="create.at")
+    @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
 
-    @Column(name="update.at")
+    @Column(name = "updated_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updated;
-
-
-
 }

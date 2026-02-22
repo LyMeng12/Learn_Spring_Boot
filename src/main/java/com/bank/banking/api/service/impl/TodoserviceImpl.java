@@ -5,7 +5,9 @@ import com.bank.banking.api.dto.TodoResponse;
 import com.bank.banking.api.model.TodoUser;
 import com.bank.banking.api.repository.TodoRepository;
 import com.bank.banking.api.service.TodoService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,13 +17,15 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-public class TodoserviceImpl implements TodoService {
+public class TodoserviceImpl implements TodoService  {
 
     private final TodoRepository todoRepository;
 
     public TodoserviceImpl(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
     }
+
+
 
 
     @Override
@@ -73,6 +77,7 @@ public class TodoserviceImpl implements TodoService {
         todoResponse.setCompleted(todoUser.get().getCompleted());
         return null;
     }
+
 
     @Override
     public List<TodoResponse> getAll() {
