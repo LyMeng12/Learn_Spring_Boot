@@ -6,28 +6,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Student {
+public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String teacherName;
 
-    public String getName() {
-        return name;
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    private String name;
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
     }
 
     public Long getId() {
         return id;
     }
 
-    // Constructors, getters, setters
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
